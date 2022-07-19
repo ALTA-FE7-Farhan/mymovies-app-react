@@ -32,12 +32,14 @@ const DetailMovie = (props) => {
   return (
     <>
       <Header />
-      <div className="m-3 flex gap-2">
-        <img src={detailMovie.poster_path ? `https://image.tmdb.org/t/p/w500${detailMovie.poster_path}` : "https://via.placeholder.com/500x750?text=No+Image"} alt={detailMovie.title} width="300vh" />
-        <div className="flex flex-col">
-          <h1>{detailMovie.title}</h1>
-          <p>Release Date: {detailMovie.release_date}</p>
-          <p>{detailMovie.overview}</p>
+      <div className="w-full h-screen overflow-auto bg-zinc-700 dark:bg-black">
+        <div className="m-3 flex gap-2 text-white">
+          <img src={detailMovie.poster_path ? `https://image.tmdb.org/t/p/w500${detailMovie.poster_path}` : "https://via.placeholder.com/500x750?text=No+Image"} alt={detailMovie.title} width="300vh" className="rounded-lg" />
+          <div className="flex flex-col">
+            <h1 className="text-3xl">{detailMovie.title}</h1>
+            <p>Release Date: {detailMovie.release_date}</p>
+            <p>{detailMovie.overview}</p>
+          </div>
         </div>
       </div>
     </>
